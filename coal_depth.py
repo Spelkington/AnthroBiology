@@ -8,9 +8,9 @@ frequencies=[]
 
 observedMutations = 82
 experimentRepetitions = 100
-frequency = 0.0
 
-for j in range(4500,20000,100):
+for j in range(250,100000,250):
+    frequency = 0.0
     for i in range(experimentRepetitions):
 
         mutationChance = 0.001      # Percent chance of mutation
@@ -33,7 +33,7 @@ for j in range(4500,20000,100):
             # depth: how much time has passed within the tree
             treeDepth += timeInterval
             # Record gene-hours(?) within the tree
-            treeLength += timeInterval * geneCopies
+            treeLength = geneCopies * treeDepth
             # Decrease the number of gene copies by 1
             geneCopies -= 1
 
@@ -58,4 +58,4 @@ data = [go.Bar(
         )]
 
 ##This bit requires a Plotly account.
-py.iplot(data, filename='basic-bar')
+py.plot(data, filename='basic-bar')
