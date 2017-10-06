@@ -57,4 +57,5 @@ data = [go.Bar(
             y=frequencies
         )]
 
+##This bit requires a Plotly account.
 py.iplot(data, filename='basic-bar')
